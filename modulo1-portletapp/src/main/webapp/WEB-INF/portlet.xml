@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<portlet-app xmlns="http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.0"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd">
+	
+	<portlet>
+		<portlet-name>test-portlet01</portlet-name>
+		<display-name>Test Portlet 01</display-name>
+		<portlet-class>org.springframework.web.portlet.DispatcherPortlet</portlet-class>
+		<init-param>
+			<name>contextConfigLocation</name>
+			<value>/WEB-INF/portlet/portlet01.xml</value>
+		</init-param>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>view</portlet-mode>
+		</supports>
+		<portlet-info>
+			<title>Test Portlet 01</title>
+			<short-title>TestPortlet01</short-title>
+			<keywords>test,portlet</keywords>
+		</portlet-info>
+
+        <supported-publishing-event>
+            <qname xmlns:n="http://pe.apiconz.portlet.events">n:datoEvent</qname>
+        </supported-publishing-event>
+        <supported-publishing-event>
+            <qname xmlns:n="http://pe.apiconz.portlet.events">n:datoEventB</qname>
+        </supported-publishing-event>
+	</portlet>
+
+    <event-definition>
+        <qname xmlns:n="http://pe.apiconz.portlet.events">n:datoEvent</qname>
+        <value-type>java.lang.String</value-type>
+    </event-definition>
+
+    <event-definition>
+        <qname xmlns:n="http://pe.apiconz.portlet.events">n:datoEventB</qname>
+        <value-type>java.lang.String</value-type>
+    </event-definition>
+
+</portlet-app>
